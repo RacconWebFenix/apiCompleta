@@ -52,21 +52,6 @@ app.delete("/student/:id", async (req, res) => {
   }
 });
 
-//PUT
-app.put("/student:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-    const data = await studentModel.findOneAndUpdate(id, req.body, {
-      new: true,
-    });
-    if (!data) {
-      res.status(404).send("Documento não encontrado");
-    } else {
-      res.status(200).send();
-    }
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+
 
 export { app as studentRouter };
