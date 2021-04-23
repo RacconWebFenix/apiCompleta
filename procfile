@@ -1,0 +1,1 @@
+web: node ŕ dotenv/config app.js
